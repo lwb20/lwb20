@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		.class4{/* 对clear4中的元素进行定位 */
+			width: 300px;
+			height: 100px;
+			position: relative;
+			text-align: center;
+		}
+		.class4>div{/* 对class4中的六个div进行统一的设置大小和颜色并添加动画 */
+			background-color: aqua;
+			width: 12px;
+			height: 100%;
+			border-radius: 10px;
+			display: inline-block;
+			margin: 0 1px;	
+			animation: amaa 1s infinite ease-in ;
+		}
+		@-webkit-keyframes amaa{/* 对上面的class4中的六个div进行动画定义 */
+			0%{
+				-webkit-transform: scaleY(0.5);
+				transform: scaleY(0.5);
+			}
+			50%{
+				-webkit-transform: scaleY(1);
+				transform: scaleY(1);
+			}
+			70%{
+				-webkit-transform: scaleY(0.5);
+				transform: scaleY(0.5);
+			}
+			100%{
+				-webkit-transform: scaleY(0.5);
+				transform: scaleY(0.5);
+			}
+		}
+		.class4 .class4-2{/* 对后面五个div进行动画延迟 */
+			animation-delay: 0.1s;
+		}
+		.class4 .class4-3{
+			animation-delay: 0.2s;
+		}
+		.class4 .class4-4{
+			animation-delay: 0.3s;
+		}
+		.class4 .class4-5{
+			animation-delay: 0.4s;
+		}
+		.class4 .class4-6{
+			animation-delay: 0.5s;
+		}
+		@-webkit-keyframes dddc{/* 对六个span进行动画定义 */
+			0%{
+				opacity: 1;
+				transform: rotate(225deg);
+				animation-timing-function: ease-out;
+			}
+			10%{
+				opacity: 1;
+				transform: rotate(360deg);
+				animation-timing-function: linear;
+			}
+			30%{
+				opacity: 1;
+				transform: rotate(450deg);
+				animation-timing-function: ease-in-out;
+			}
+			50%{
+				opacity: 1;
+				transform: rotate(720deg);
+			}
+			70%{
+				opacity: 1;
+				transform: rotate(810deg);
+			}
+			80%{
+				opacity: 1;
+				transform: rotate(945deg);
+			}
+			81%{
+				transform: rotate(945deg);
+				opacity: 0;
+			}
+			100%{
+				transform: rotate(945deg);
+				opacity: 0;
+			}
+		}
+		.bg{/* 设置一个装动画图的盒子 */
+			width: 300px;
+			height: 300px;
+			background-color: black;
+			position: relative;
+		}
+		.bg>.con{/* 对div进行定位 */
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left: calc(50% - 50px);
+			top: calc(50% - 50px);
+		}
+		.bg>.con>span{/* 对span添加动画并进行定位 */
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			animation: dddc 6s infinite ease-in-out;
+		}
+		.bg>.con>span:after{/* 利用伪元素选择器画出白色圆点 */
+			content: "";
+			width: 10px;
+			height: 10px;
+			background-color: white;
+			display: block;
+			border-radius: 50%;
+		}
+		.bg>.con>span:nth-child(2){/* 对后面五个span进行动画延迟 */
+			animation-delay: 0.2s;
+		}
+		.bg>.con>span:nth-child(3){
+			animation-delay: 0.4s;
+		}
+		.bg>.con>span:nth-child(4){
+			animation-delay: 0.6s;
+		}
+		.bg>.con>span:nth-child(5){
+			animation-delay: 0.8s;
+		}
+		.bg>.con>span:nth-child(6){
+			animation-delay: 1s;
+		}
+	</style>
+	<body>
+		<div class="class4"><!--  动画一定义六个相同的div -->
+			<div class="class4-1"></div>
+			<div class="class4-2"></div>
+			<div class="class4-3"></div>
+			<div class="class4-4"></div>
+			<div class="class4-5"></div>
+			<div class="class4-6"></div>
+		</div>
+		<div class="bg"><!-- 动画二定义六个span标签 -->
+			<div class="con">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</body>
+</html>
